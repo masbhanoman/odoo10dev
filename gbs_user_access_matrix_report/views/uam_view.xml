@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    empty view-->
+
+    <record id="action_uam" model="ir.actions.act_window">
+        <field name="name">UAM</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">uam.base.model</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">create a patient</p>
+        </field>
+    </record>
+
+    <menuitem id ='UAM_root_menu' name="gbs UAM" sequence='0'/>
+    <menuitem id ='UAM_menu' name="gbs UAM" parent="UAM_root_menu" sequence='1' action="action_uam"/>
+    <menuitem id ='UAM_root_download_uam_id' name="Download UAM" parent="UAM_root_menu" action="create_download_uam_wizard"/>
+</odoo>

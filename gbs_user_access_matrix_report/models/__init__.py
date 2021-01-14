@@ -1,0 +1,1 @@
+from . import uam_base_model

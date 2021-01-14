@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--  we have to get field name which are not inherited in the view-->
+    <record id="res_user_inherit" model="ir.ui.view">
+        <field name="name">res.user.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+<!--            <xpath expr="//field[@name='partner_id']" position="after">-->
+<!--                <field name="added_field"/>-->
+<!--            </xpath>-->
+            <field name="partner_id" position="after">
+                <field name="added_field"/>
+            </field>
+        </field>
+    </record>
+
+    <!--form view of inherited sale.order.view from patient model-->
+    <record id="sale_order_inherit" model="ir.ui.view">
+        <field name="name">sale.order.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="patient_name"/>
+            </field>
+        </field>
+    </record>
+
+    <!--tree view of patient model-->
+    <record id="patient_tree" model="ir.ui.view">
+        <field name="name">hospital.patient.tree</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree string="Patient">
+                <field name="patient_name"/>
+                <field name="patient_age"/>
+                <field name="notes"/>
+            </tree>
+        </field>
+    </record>
+
+
+<!--form view of patient model-->
+<record id="patient_form" model="ir.ui.view">
+    <field name="name">hospital.patient.form</field>
+    <field name="model">hospital.patient</field>
+    <field name="arch" type="xml">
+        <header>
+            <button name="om_hospital.create_appointment_wizard" string="Create Appointment" type="action" class=""/>
+        </header>
+        <form string="Patients">
+            <sheet>
+                <group>
+                    <group>
+                        <field name="patient_name"/>
+                    </group>
+                    <group>
+                        <field name="patient_age"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="notes"/>
+                    <field name="image"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+    <!-- action of the patient menu -->
+    <record id="action_patient" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">create a patient</p>
+        </field>
+    </record>
+
+    <menuitem id ='hospital_root' name="Hospital" sequence='0' web_icon="om_hospital,static/description/icon.png"/>
+    <menuitem id ='hospital_patient' name="Patients" parent="hospital_root" action="action_patient"/>
+    <menuitem id ='hospital_download_uam_id' name="Download UAM" parent="hospital_root" action="create_appointment_wizard"/>
+</odoo>

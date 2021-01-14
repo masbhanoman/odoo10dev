@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Adds a report menu -> Print Patient Card pdf-->
+    <!-- patient_card_pdf_template - model.template Id-->
+    <report
+    id = "report_patient_card"
+    string = "Print Patient Card pdf"
+    model = "hospital.patient"
+    report_type="qweb-pdf"
+    name = "om_hospital.report_patient"
+    file = "om_hospital.report_patient"
+    />
+
+    <!-- Adds a report menu -> Download UAM Excel Sheet-->
+    <!--extension is important in odoo10 [.xlsx]-->
+    <report
+            id = "report_patient_card_xlx"
+            string = "Download UAM Excel Sheet"
+            model = "hospital.patient"
+            report_type="xlsx"
+            name = "om_hospital.report_patient_xls.xlsx"
+            file = "om_hospital.report_patient_xls.xlsx"
+    />
+</odoo>

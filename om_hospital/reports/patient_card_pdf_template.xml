@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_patient">
+        <t t-call="report.html_container">
+            <div class="page">
+                <div>
+                    <t t-foreach="other_data" t-as="od">
+                        <h2>Other Data</h2>
+                        Name : <t t-esc="od['name']"/>
+                        <br/>
+                        Age : <t t-esc="od['age']"/>
+                        <br/>
+                    </t>
+                </div>
+
+                <div>
+                    <t t-foreach="docs" t-as="doc">
+                        <h2>Model Data</h2>
+                        Name : <t t-esc="doc.patient_name"/>
+                        <br/>
+                        Age : <t t-esc="doc.patient_age"/>
+                        <br/>
+                    </t>
+                </div>
+
+            </div>
+        </t>
+    </template>
+</odoo>

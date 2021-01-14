@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="open_uam_wizard_form" model="ir.ui.view">
+        <field name="name">create.uam.wizard</field>
+        <field name="model">select.uam</field>
+        <field name="arch" type="xml">
+            <form string="Download UAM">
+                <group class="oe_title">
+                    <field name="user_groups"/>
+                </group>
+                <footer>
+<!--                    <button name="gbs_user_access_matrix_report.report_uam_xlx" string="Download" type="action" class="btn btn-sm btn-primary"/>-->
+                    <button name="print_uam_report" string="Print UAM Report" type="object" class="btn btn-sm btn-primary"/>
+                    <button string="Cancel" class="btn btn-sm btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="create_download_uam_wizard" model="ir.actions.act_window">
+        <field name="name">Open Uam wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">select.uam</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="open_uam_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

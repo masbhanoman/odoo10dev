@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Adds a report menu -> Download UAM Excel Sheet-->
+    <!--extension is important in odoo10 [.xlsx]-->
+    <report
+            id = "report_uam_xlx"
+            string = "Download UAM Excel Sheet"
+            model = "uam.base.model"
+            report_type="xlsx"
+            name = "gbs_user_access_matrix_report.report_uam_name.xlsx"
+            file = "gbs_user_access_matrix_report.report_uam_name.xlsx"
+    />
+</odoo>

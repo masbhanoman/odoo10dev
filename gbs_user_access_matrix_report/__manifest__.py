@@ -8,11 +8,13 @@
     'description': """gbs uam description""",
     'category': 'Extra Tools',
     'website': 'https://www.odoo.com/',
-    'depends' : ['base', 'report_xlsx', ],
+    'depends' : ['base', 'report_xlsx', 'mail'],
+    # it doesnt matter, still put wizard on top of the stack
     'data': [
-        'wizards/uam_wizard.xml',
+        'data/mail_template.xml',
         'views/uam_view.xml',
-
+        'reports/report.xml',
+        'wizards/uam_wizard.xml'
     ],
     'demo': [],
     'installable': True,

@@ -6,7 +6,7 @@ basics apps and reports
 randomly added some features of odoo 10
 
 0. User Access Matrix
-    - list of all current users and their permissions listed in a excel sheet
+    - list of all current users and their permissions listed in a downloadable excel sheet
     
 1. Send email to a recipient on button click
     - send email with attachment on button click from wizard   
@@ -16,3 +16,8 @@ randomly added some features of odoo 10
     
 3. Sends message/notifications[mail.message] (not email) to a user/channel on changes 
     - creates a mail.thread on button click
+
+
+
+# Things to remember/Understand
+

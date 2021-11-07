@@ -20,4 +20,5 @@ randomly added some features of odoo 10
 
 
 # Things to remember/Understand
+odoo10 codebase is not competitable with the later versions
 
